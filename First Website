@@ -42,7 +42,7 @@
 /* Style the buttons inside the tab */
 .tab button {
   background-color: inherit;
-  float: left;
+  float: middle;
   border: none;
   outline: none;
   cursor: pointer;
