@@ -7,12 +7,11 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #2d243e;
+            background-image: linear-gradient(to bottom right, rgb(74, 51, 131), rgb(129, 53, 181));
             margin: 0;
             padding: 20px;
         }
         header {
-            background-color: #4b2d8b;
             padding: 1rem;
             text-align: center;
         }
@@ -21,38 +20,116 @@
             margin: 0 auto;
             padding: 20px;
         }
+        p { text-align: center; 
+        color: white;
+        font-size: 20px;}
+
+        h1, h2, h3, h4 {
+            text-align: center;
+            color: white;
+        }
+        label {
+            color: white;
+        }
+
+        /* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
     </style>
 </head>
 <body>
     <header>
-        <h1 style="color:rgb(250, 250, 250);" style="font-family:verdana;" >Welcome to My Website</h1>
+        <h1 style="font-family:verdana;" >Welcome to My Website</h1>
     </header>
+
+    <div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'About')">About</button>
+  <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
+  <button class="tablinks" onclick="openTab(event, 'Links')">Links</button>
+</div>
+
+<div id="About" class="tabcontent">
+  <h3>About</h3>
+  <h3> Exposure </h3>
+    <p> Exposure Analytics is the market leader <br> in analytics for events </p> 
+    <img src="https://process.filestackapi.com/cache=expiry:max/N6YNXaFGSdqOlgeJbBwF" alt="Exposure Analytics" width="400" height="300">
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h2> Contact</h2>
+    <p> Email: nathan@exposureanalytics.com</p>
+    <p> Phone: +447911123456</p>
+</div>
+
+<div id="Links" class="tabcontent">
+  <h2>Links</h2>
+    <a href="https://www.exposureanalytics.com" style="color:white;" >Exposure Analytics</a>
+</div>
+
+
     
+<script>
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
     <main>
         <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8QDxMQERAWFRUSFxEQEBIQEBYWFxUSFRUXFhUSGRUZHTQhHBslHhcXITIiJSktLjouGR8zODMsQyotLi4BCgoKDg0OGxAQGzclHyItNzUtKy81LzAtMS0rMC4tLTUtMS8tLS0rLS8vLS0tLSstNy0tLS8tLS0tLS0tLTctK//AABEIALoBDwMBIgACEQEDEQH/xAAbAAEBAAMBAQEAAAAAAAAAAAAABgEFBwQCA//EAEgQAAEDAgMGBAIGBQYPAAAAAAEAAgMEEQUSIQYHEzFBUSIyYXEUgSMzUmKRsTVCcqGyFTR0kpPTFhc2Q1NUVXODhKO0wcLw/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAECAwQF/8QAKBEBAQACAQQBAwMFAAAAAAAAAAECESEDEjFBE1FhoSKB4XGRwdHw/9oADAMBAAIRAxEAPwCDREX2noEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERBhZREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQVewexwxQzgzmLg8I6R583Ez/eFrZP3qnO6WD/aY/sW/wB4s7ivNW+1L+cyzVbqKR8j3nEGgvc95HCj0LnE28/qvJn1LOpZ3a/bbFvPlD7S4JDRVvwzpy+MCNz5mRgkNdqSGZtbdr6rbbXbBOoqaOrhn+IhdbO9seXK14Bjk0cbtN7X9W99NFtRg7KKrkpo5OI1gYQ8AC+ZgcdAbdbLoG5/EpKiGfDpozJA1hcHO1a1snhMBv0PicPZ3oumeWWOMzl39futvG03sXsI7EIZKiSbgQsJDHlmbOW34h1IAa3lfvfstHhuFxVFeylilPDkk4TJnRgEt1+kyX62uBfkR7Lou9itfRUcGHU8ZZBI0sc8ciyO30APc83X5jvd1oLYT9KUf++b+RTDPLLG5/2Jbra3k3RRNNnYjY87GBo0+cin9sN3c9BD8QyUTwi2chhY5gcQA7LchzbnmDpcaWuRY7xN39TiVY2oifCGthjh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VuG8bjaa4fLRoFlZRbVUY7ikEmFYfTskvLAZzMyzvDmcS3Uix+SlJmktcB1BA/BfSypjj2+CcKfeLikFVVxyQSZ2tpoInOAcLPa6QubZwB/WH4r9NnsfpXUhw3EGuMGYyU88Qu+nkNySB1bcnkD5nCxB0lFhZ+Odsx+ia40sGbN4Q055MaY6Lnw4aZwmI7WzGx9S1aHH6mllqXPpYDDD4WtZnJc4DQvJNw1x7C466631yKzGy7t2aWdRhuCVlpaeu+BcQOJT1URexptY5H5gNbX8x9hyX3V4hQ0GH1FFSVBqpqvI2eYRlkTIx+q2/MkFw0J8176AKJRZ+P63g0wQriqdQV76asfXtpjDFTxTwOjcZGmDW9OW8weYtyJv6KIRayx2WNltNiTautnqWtLWyvzNaeYaAGgm3Uhtz6krWoi1JqaUREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREH//Z" alt="Exposure Analytics Logo" width="200" height="100">
-        <h2 style="color:white;"> About</h2>
-        <p style="color:white;">This is my basic website used to get to understand html.</p>
         
-        <h2 style="color:white;"> Contact</h2>
-        <p style="color:white;"> Email: nathan@exposureanalytics.com</p>
-        <p style="color:white;"> Phone: +447911123456</p>
 
-        <h2 style="color:white;">Links</h2>
-        <a href="https://www.exposureanalytics.com" style="color:white;" >Exposure Analytics</a>
-        
-        <h3 style="color:white;"> Exposure </h3>
-        <p style="color:white;"> Exposure Analytics is the market leader <br> in analytics for events </p> 
-        <img src="https://process.filestackapi.com/cache=expiry:max/N6YNXaFGSdqOlgeJbBwF" alt="Exposure Analytics" width="400" height="300">
-
-        <h4 style="color:white;"> Send us a message</h4>
+        <h4> Send us a message</h4>
         <form>
-            <label style="color:white;" for="Full Name">Name:</label> <br>
+            <label for="Full Name">Name:</label> <br>
             <input type="text" id="name" name="name"><br><br>
-            <label style="color:white;" for="email">Email:</label><br>
+            <label for="email">Email:</label><br>
             <input type="Email" id="email" name="email"><br><br>
-            <label style="color:white;" for="phone">Phone Number:</label><br>
+            <label for="phone">Phone Number:</label><br>
             <input type="Phone Number" id="phone" name="phone"><br><br>
-            <label style="color:white;" for="message">Message:</label><br>
+            <label for="message">Message:</label><br>
             <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
             <input type="submit" value="Submit">
 
